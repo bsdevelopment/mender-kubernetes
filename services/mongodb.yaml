@@ -51,9 +51,9 @@ metadata:
   resourceVersion: "472"
   uid: 9fc9825b-45df-4c24-a94a-a190339f72cd
 spec:
-  clusterIP: 10.105.147.185
-  clusterIPs:
-  - 10.105.147.185
+  #clusterIP: 10.105.147.185
+  #clusterIPs:
+  #- 10.105.147.185
   ports:
   - name: mongodb
     port: 27017

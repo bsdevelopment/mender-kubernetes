@@ -51,9 +51,9 @@ metadata:
   resourceVersion: "8722"
   uid: 47273e77-d3fe-45e5-b8c5-e920f73d060e
 spec:
-  clusterIP: 10.111.3.96
-  clusterIPs:
-  - 10.111.3.96
+#  clusterIP: 10.111.3.96
+#  clusterIPs:
+#  - 10.111.3.96
   ports:
   - name: http
     port: 80

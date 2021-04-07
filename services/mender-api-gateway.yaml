@@ -57,9 +57,9 @@ metadata:
   resourceVersion: "8718"
   uid: 05d4ed0b-0b47-4d35-9609-867a048c280c
 spec:
-  clusterIP: 10.102.166.48
-  clusterIPs:
-  - 10.102.166.48
+#  clusterIP: 10.102.166.48
+#  clusterIPs:
+#  - 10.102.166.48
   ports:
   - name: https
     port: 443
