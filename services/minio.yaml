@@ -50,9 +50,9 @@ metadata:
   resourceVersion: "8626"
   uid: 5240faa8-b1f4-499b-ba8f-6b6da4b8b201
 spec:
-  #clusterIP: 10.111.218.104
-  #clusterIPs:
-  #- 10.111.218.104
+  clusterIP: 10.111.218.104
+  clusterIPs:
+  - 10.111.218.104
   ports:
   - name: http
     port: 9000
