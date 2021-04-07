@@ -50,9 +50,9 @@ metadata:
   resourceVersion: "8730"
   uid: 5978b631-3aef-4aad-ba3e-1da55eddd4f4
 spec:
-  clusterIP: 10.106.36.109
-  clusterIPs:
-  - 10.106.36.109
+#  clusterIP: 10.106.36.109
+#  clusterIPs:
+#  - 10.106.36.109
   ports:
   - port: 8080
     protocol: TCP
