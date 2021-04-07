@@ -12,39 +12,6 @@ metadata:
     app.kubernetes.io/name: deployments-svc
     app.kubernetes.io/part-of: mender
     helm.sh/chart: mender
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          .: {}
-          f:meta.helm.sh/release-name: {}
-          f:meta.helm.sh/release-namespace: {}
-        f:labels:
-          .: {}
-          f:app.kubernetes.io/component: {}
-          f:app.kubernetes.io/instance: {}
-          f:app.kubernetes.io/managed-by: {}
-          f:app.kubernetes.io/name: {}
-          f:app.kubernetes.io/part-of: {}
-          f:helm.sh/chart: {}
-      f:spec:
-        f:ports:
-          .: {}
-          k:{"port":8080,"protocol":"TCP"}:
-            .: {}
-            f:port: {}
-            f:protocol: {}
-            f:targetPort: {}
-        f:selector:
-          .: {}
-          f:app.kubernetes.io/name: {}
-        f:sessionAffinity: {}
-        f:type: {}
-    manager: Go-http-client
-    operation: Update
-    time: "2021-04-07T17:00:30Z"
   name: mender-deployments
   namespace: default
   resourceVersion: "8732"
