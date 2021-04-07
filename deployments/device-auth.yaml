@@ -1,0 +1,281 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    meta.helm.sh/release-name: mender
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2021-04-07T17:00:30Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/component: device-auth
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: device-auth
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: mender
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:helm.sh/chart: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app.kubernetes.io/name: {}
+          f:spec:
+            f:containers:
+              k:{"name":"device-auth"}:
+                .: {}
+                f:args: {}
+                f:env:
+                  .: {}
+                  k:{"name":"DEVICEAUTH_INVENTORY_ADDR"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DEVICEAUTH_JWT_EXP_TIMEOUT"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DEVICEAUTH_JWT_ISSUER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DEVICEAUTH_MAX_DEVICES_LIMIT_DEFAULT"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DEVICEAUTH_MIDDLEWARE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"DEVICEAUTH_ORCHESTRATOR_ADDR"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:envFrom: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/etc/deviceauth/rsa/"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:readOnly: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"rsa"}:
+                .: {}
+                f:name: {}
+                f:secret:
+                  .: {}
+                  f:defaultMode: {}
+                  f:secretName: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2021-04-07T17:00:30Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-04-07T17:01:00Z"
+  name: device-auth
+  namespace: default
+  resourceVersion: "8976"
+  uid: dd168cec-26e1-4091-98f0-a2b941c328dd
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: device-auth
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/name: device-auth
+    spec:
+      containers:
+      - args:
+        - server
+        - --automigrate
+        env:
+        - name: DEVICEAUTH_INVENTORY_ADDR
+          value: http://mender-inventory:8080/
+        - name: DEVICEAUTH_ORCHESTRATOR_ADDR
+          value: http://mender-workflows-server:8080/
+        - name: DEVICEAUTH_JWT_ISSUER
+          value: Mender
+        - name: DEVICEAUTH_JWT_EXP_TIMEOUT
+          value: "604800"
+        - name: DEVICEAUTH_MIDDLEWARE
+          value: prod
+        - name: DEVICEAUTH_MAX_DEVICES_LIMIT_DEFAULT
+          value: "500"
+        envFrom:
+        - prefix: DEVICEAUTH_
+          secretRef:
+            name: mongodb-common
+        image: docker.io/mendersoftware/deviceauth:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/internal/v1/devauth/alive
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: device-auth
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/internal/v1/devauth/health
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/deviceauth/rsa/
+          name: rsa
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: rsa
+        secret:
+          defaultMode: 420
+          secretName: rsa-device-auth
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2021-04-07T17:00:30Z"
+    lastUpdateTime: "2021-04-07T17:00:30Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2021-04-07T17:00:30Z"
+    lastUpdateTime: "2021-04-07T17:01:00Z"
+    message: ReplicaSet "device-auth-6cbc747568" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

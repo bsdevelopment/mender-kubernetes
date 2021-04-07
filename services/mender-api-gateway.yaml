@@ -1,0 +1,77 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: mender
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2021-04-07T17:00:30Z"
+  labels:
+    app.kubernetes.io/component: api-gateway
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: api-gateway-svc
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: mender
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/part-of: {}
+          f:helm.sh/chart: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+          k:{"port":443,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app.kubernetes.io/name: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2021-04-07T17:00:30Z"
+  name: mender-api-gateway
+  namespace: default
+  resourceVersion: "8718"
+  uid: 05d4ed0b-0b47-4d35-9609-867a048c280c
+spec:
+  clusterIP: 10.102.166.48
+  clusterIPs:
+  - 10.102.166.48
+  ports:
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app.kubernetes.io/name: api-gateway
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
