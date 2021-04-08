@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    meta.helm.sh/release-name: minio
+    meta.helm.sh/release-namespace: default
+  labels:
+    app: minio
+    app.kubernetes.io/managed-by: Helm
+    chart: minio-6.0.5
+    release: minio
+  name: minio
+  namespace: default
+secrets:
+- name: minio-token-tfsxn
