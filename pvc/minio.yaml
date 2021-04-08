@@ -8,11 +8,11 @@ metadata:
 #    pv.kubernetes.io/bound-by-controller: "yes"
 #    volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
   labels:
-#    app: minio
-#    app.kubernetes.io/managed-by: Helm
-#    chart: minio-6.0.5
-#    heritage: Helm
-#    release: minio
+    app: minio
+    app.kubernetes.io/managed-by: Helm
+    chart: minio-6.0.5
+    heritage: Helm
+    release: minio
   name: minio
   namespace: default
 spec:

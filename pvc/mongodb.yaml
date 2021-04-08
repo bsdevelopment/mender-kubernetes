@@ -8,11 +8,11 @@ metadata:
 #    pv.kubernetes.io/bound-by-controller: "yes"
 #    volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
   labels:
-#    app.kubernetes.io/component: mongodb
-#    app.kubernetes.io/instance: mongodb
-#    app.kubernetes.io/managed-by: Helm
-#    app.kubernetes.io/name: mongodb
-#    helm.sh/chart: mongodb-10.12.1
+    app.kubernetes.io/component: mongodb
+    app.kubernetes.io/instance: mongodb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.12.1
   name: mongodb
   namespace: default
 spec:
