@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    meta.helm.sh/release-name: mongodb
+    meta.helm.sh/release-namespace: default
+    pv.kubernetes.io/bind-completed: "yes"
+    pv.kubernetes.io/bound-by-controller: "yes"
+    volume.beta.kubernetes.io/storage-provisioner: docker.io/hostpath
+  labels:
+    app.kubernetes.io/component: mongodb
+    app.kubernetes.io/instance: mongodb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.12.1
+  name: mongodb
+  namespace: default
+  resourceVersion: "849486"
+  selfLink: /api/v1/namespaces/default/persistentvolumeclaims/mongodb
+  uid: 47cacc3c-9966-4eba-afe5-d1c13d5e9953
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: hostpath
+  volumeMode: Filesystem
+  volumeName: pvc-47cacc3c-9966-4eba-afe5-d1c13d5e9953
+status:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 8Gi
+  phase: Bound

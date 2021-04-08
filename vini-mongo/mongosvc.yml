@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: mongodb
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2021-04-08T08:41:47Z"
+  labels:
+    app.kubernetes.io/component: mongodb
+    app.kubernetes.io/instance: mongodb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: mongodb
+    helm.sh/chart: mongodb-10.12.1
+  name: mongodb
+  namespace: default
+  resourceVersion: "849474"
+  selfLink: /api/v1/namespaces/default/services/mongodb
+  uid: e481e2d2-d310-483b-b592-e42a1f1b478b
+spec:
+#  clusterIP: 10.108.183.60
+  ports:
+  - name: mongodb
+    port: 27017
+    protocol: TCP
+    targetPort: mongodb
+  selector:
+    app.kubernetes.io/component: mongodb
+    app.kubernetes.io/instance: mongodb
+    app.kubernetes.io/name: mongodb
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
