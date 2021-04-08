@@ -1,0 +1,1003 @@
+---
+# Source: mender/templates/api-gateway-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-gateway
+  namespace: default
+  labels:
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: secrets
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+data:
+  dhparam.pem: LS0tLS1CRUdJTiBESCBQQVJBTUVURVJTLS0tLS0KTUlJQkNBS0NBUUVBbHRuUFdLL2pIQXBDYkcrVG81WVdhQWpNeFZzUHZJYTBiT0RFVCs3aXVhdGIzM2pJWkR2SwozZ3hSOVN1RXJ4M21HSFpEcHF2b1ZhNWsvaXlHR2pvRWJMMVBQZFFFZDFRVGM1NlFhQys2R3Q0S290TjdyMXNrCk5LU2tQbXNqa1JvS2dXVGlSLy9hK1pHVG1wYWxoeTFLdldUdS8xd1BRV2E3K09jTW1USk9HMkdsRFNvak9hd20KVFdJQ3lydWJtS2YxQ004YkZPc3RieHB6ZHlIUkFQcE9JWVJyTnRLUWx0TFpLQ0xVUDNOeSt0TkNycjVSSzFGYQovc0FHc25FbElkOUFUTDlPSG0wcmVYd1BnTTZsMnJrL3FMSDg5YmVEUDA0QUdWSWlVcFR0Zk9zRVlzSEdLamtECmM1K1VnVytNMTNXUGRoV3NXUEFaeHM3aDRjK2xiSDhjZ3dJQkFnPT0KLS0tLS1FTkQgREggUEFSQU1FVEVSUy0tLS0t
+  cert.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZjakNDQkZxZ0F3SUJBZ0lTQTg4WXQrLzRrZkZFUVNFRmMvQXVBZTg3TUEwR0NTcUdTSWIzRFFFQkN3VUEKTUVveEN6QUpCZ05WQkFZVEFsVlRNUll3RkFZRFZRUUtFdzFNWlhRbmN5QkZibU55ZVhCME1TTXdJUVlEVlFRRApFeHBNWlhRbmN5QkZibU55ZVhCMElFRjFkR2h2Y21sMGVTQllNekFlRncweE9URXhNREV4TnpRek16bGFGdzB5Ck1EQXhNekF4TnpRek16bGFNQ2d4SmpBa0JnTlZCQU1USFdzNGN5NXRaWEpzYVc0dWMyRmhjeTVzWVdJdWJXVnUKWkdWeUxtbHZNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXZ5L0ZSUE1Gb1REUApOU0xUWUhGQzRwa0FTQ0UvZGNNOTlOMWJ6OHduM2I0ZzV0OTlBNWIxQ21KRVNSYXMvbC9salZZdStiNkl2NlU1CitYb0dzL2FKMmRYSU5JK1Z0UThic3d4UENNTTNyVkNPZm14QzVRYXFpQ0gzRTVNKzhEL2pTaEV0WjFDM1dwSXIKSFZ5ZEpDRjl0alRZNTdaV2F0c0RwNFZKY1dMY3NVdFhWMGRFOVZIR1U5ZTdSQWRqd1NMbGJ6T2NuY21hVFpBSgpkWWRjVXJBeVQ4NkFrVk8xYlpESVVxWlQxVXZBY3R3Q2k3bmgvNjRzMy9pQTlYY0l5aU1lWXNtWlovQXFXOFdxCkRRdGhpd3RPbUd0b0tVYWRWeUltN2dhWGRkU3IyVXhXanc0cFJZN0RlSGErYnN6Ym53THVSMWg3K3J5cE0rdnMKcm04ckNrOC90UUlEQVFBQm80SUNjakNDQW00d0RnWURWUjBQQVFIL0JBUURBZ1dnTUIwR0ExVWRKUVFXTUJRRwpDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFNQmdOVkhSTUJBZjhFQWpBQU1CMEdBMVVkRGdRV0JCVEY1aE44CmkwajN3bEdXcjZwQ2ZpOVhIUXJ1dnpBZkJnTlZIU01FR0RBV2dCU29TbXBqQkgzZHV1YlJPYmVtUldYdjg2anMKb1RCdkJnZ3JCZ0VGQlFjQkFRUmpNR0V3TGdZSUt3WUJCUVVITUFHR0ltaDBkSEE2THk5dlkzTndMbWx1ZEMxNApNeTVzWlhSelpXNWpjbmx3ZEM1dmNtY3dMd1lJS3dZQkJRVUhNQUtHSTJoMGRIQTZMeTlqWlhKMExtbHVkQzE0Ck15NXNaWFJ6Wlc1amNubHdkQzV2Y21jdk1DZ0dBMVVkRVFRaE1CK0NIV3M0Y3k1dFpYSnNhVzR1YzJGaGN5NXMKWVdJdWJXVnVaR1Z5TG1sdk1Fd0dBMVVkSUFSRk1FTXdDQVlHWjRFTUFRSUJNRGNHQ3lzR0FRUUJndDhUQVFFQgpNQ2d3SmdZSUt3WUJCUVVIQWdFV0dtaDBkSEE2THk5amNITXViR1YwYzJWdVkzSjVjSFF1YjNKbk1JSUJCQVlLCkt3WUJCQUhXZVFJRUFnU0I5UVNCOGdEd0FIY0FYcWR6K2Q5V3dPZTFOa2g5MEVuZ01ucVJtZ3lFb1JJU2hCaDEKbG9GeFJWZ0FBQUZ1S0VlN2FBQUFCQU1BU0RCR0FpRUF0U1lFbU1ZQXFpTnltWDhPQVg4MUh2UncvZWVyc3poTApyQVpJd2RUMXRBOENJUUNocDVHNkI5TEFRZDZpTGRpdTlYSTBLK3IvQ3RualN3OGtkd1JLN2RUbU53QjFBQWUzClhCdmxmV2ovOGJER0hTTVZ4N3JtVjN4WGxMZHE3cnhoT2hwcDA2SWNBQUFCYmloSHU1UUFBQVFEQUVZd1JBSWcKZDRPbG5Lb0dDOGNSMzlFZXpzYXB2RXhkd1JHVHRIUWVOeW5rUS9SeTJpNENJRlJaQnZBa0pVTnhqcnM2NVkxbwpKOW1qMytVSm9tL1ZLNWZmZzhQVWdnRDVNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUFIVHZnZ05BMUFTUTN1CmlLTVNBNTdkS29FSU1ZbktFSjR3azF0V1Zza2luc1RjZUpwVnhNZmxqNUJ5aUlLOHRwY1lJbFY4alpuMUxrK3kKSWFxaFZjc2NhdERoT2pMT1hCODRWN09VWEY2T1ZYRjhDWGhQZUs2SVJ2TGY1bVZBNEJSVUkwQVdiRWdSM29EOQpFUXhiOWRQOW9MQW9vSDVWUlR3Mjk4YUlsaDJVTmpjMGZTYVlqVGE4SnBCRXB4a0Rhb0QrdzRSc3g4dDJra01TCkhtLytJOFNmL05iVDJGd1B3VUxNR2NuUWZsVVNSeVpFUnlBR3NHMHZNQ1pMaE96a2NSd3NlOWQwRy9iM3o3VDcKMDRGME8wdDRYSERGYTdCN0lmN2JQeGRTUmFsSWxwU2Zvb3EwSGdjZys2YkljbmVza0RHUVdlakFwSVZGUWRNaApCQ2Y1eUxmZgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlFa2pDQ0EzcWdBd0lCQWdJUUNnRkJRZ0FBQVZPRmMyb0xoZXluQ0RBTkJna3Foa2lHOXcwQkFRc0ZBREEvCk1TUXdJZ1lEVlFRS0V4dEVhV2RwZEdGc0lGTnBaMjVoZEhWeVpTQlVjblZ6ZENCRGJ5NHhGekFWQmdOVkJBTVQKRGtSVFZDQlNiMjkwSUVOQklGZ3pNQjRYRFRFMk1ETXhOekUyTkRBME5sb1hEVEl4TURNeE56RTJOREEwTmxvdwpTakVMTUFrR0ExVUVCaE1DVlZNeEZqQVVCZ05WQkFvVERVeGxkQ2R6SUVWdVkzSjVjSFF4SXpBaEJnTlZCQU1UCkdreGxkQ2R6SUVWdVkzSjVjSFFnUVhWMGFHOXlhWFI1SUZnek1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0MKQVE4QU1JSUJDZ0tDQVFFQW5OTU04RnJsTGtlM2NsMDNnN05vWXpEcTF6VW1HU1hodmI0MThYQ1NMN2U0UzBFRgpxNm1lTlFoWTdMRXF4R2lIQzZQamRlVG04NmRpY2JwNWdXQWYxNUdhbi9QUWVHZHh5R2tPbFpIUC91YVo2V0E4ClNNeCt5azEzRWlTZFJ4dGE2N25zSGpjQUhKeXNlNmNGNnM1SzY3MUI1VGFZdWN2OWJUeVdhTjhqS2tLUURJWjAKWjhoL3BacTRVbUVVRXo5bDZZS0h5OXY2RGxiMmhvbnpoVCtYaHErdzNCcnZhdzJWRm4zRUs2QmxzcGtFTm5XQQphNnhLOHh1UVNYZ3ZvcFpQS2lBbEtRVEdkTURRTWMyUE1UaVZGcnFvTTdoRDhiRWZ3ekIvb25reEV6MHROdmpqCi9QSXphcms1TWNXdnhJME5IV1FXTTZyNmhDbTIxQXZBMkgzRGt3SURBUUFCbzRJQmZUQ0NBWGt3RWdZRFZSMFQKQVFIL0JBZ3dCZ0VCL3dJQkFEQU9CZ05WSFE4QkFmOEVCQU1DQVlZd2Z3WUlLd1lCQlFVSEFRRUVjekJ4TURJRwpDQ3NHQVFVRkJ6QUJoaVpvZEhSd09pOHZhWE55Wnk1MGNuVnpkR2xrTG05amMzQXVhV1JsYm5SeWRYTjBMbU52CmJUQTdCZ2dyQmdFRkJRY3dBb1l2YUhSMGNEb3ZMMkZ3Y0hNdWFXUmxiblJ5ZFhOMExtTnZiUzl5YjI5MGN5OWsKYzNSeWIyOTBZMkY0TXk1d04yTXdId1lEVlIwakJCZ3dGb0FVeEtleHBIc3NjZnJiNFV1UWRmL0VGV0NGaVJBdwpWQVlEVlIwZ0JFMHdTekFJQmdabmdRd0JBZ0V3UHdZTEt3WUJCQUdDM3hNQkFRRXdNREF1QmdnckJnRUZCUWNDCkFSWWlhSFIwY0RvdkwyTndjeTV5YjI5MExYZ3hMbXhsZEhObGJtTnllWEIwTG05eVp6QThCZ05WSFI4RU5UQXoKTURHZ0w2QXRoaXRvZEhSd09pOHZZM0pzTG1sa1pXNTBjblZ6ZEM1amIyMHZSRk5VVWs5UFZFTkJXRE5EVWt3dQpZM0pzTUIwR0ExVWREZ1FXQkJTb1NtcGpCSDNkdXViUk9iZW1SV1h2ODZqc29UQU5CZ2txaGtpRzl3MEJBUXNGCkFBT0NBUUVBM1RQWEVmTmpXRGpkR0JYN0NWVytkbGE1Y0VpbGFVY25lOElrQ0pMeFdoOUtFaWszSkhSUkhHSm8KdU0yVmNHZmw5NlM4VGloUnpadm9yb2VkNnRpNldxRUJtdHp3M1dvZGF0ZytWeU9lcGg0RVlwci8xd1hLdHg4Lwp3QXBJdkpTd3RtVmk0TUZVNWFNcXJTREU2ZWE3M01qMnRjTXlvNWpNZDZqbWVXVUhLOHNvL2pvV1VvSE9VZ3d1Clg0UG8xUVl6KzNkc3prRHFNcDRma2x4QndYUnNXMTBLWHpQTVRaK3NPUEF2ZXl4aW5kbWprVzhsR3krUXNSbEcKUGZaK0c2WjZoN21qZW0wWStpV2xrWWNWNFBJV0wxaXdCaThzYUNiR1M1ak4ycDhNK1grUTdVTktFa1JPYjNONgpLT3FrcW01N1RIMkgzZURKQWtTbmg2L0RORnUwUWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t
+  private.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRQy9MOFZFOHdXaE1NODEKSXROZ2NVTGltUUJJSVQ5MXd6MzAzVnZQekNmZHZpRG0zMzBEbHZVS1lrUkpGcXorWCtXTlZpNzV2b2kvcFRuNQplZ2F6OW9uWjFjZzBqNVcxRHh1ekRFOEl3emV0VUk1K2JFTGxCcXFJSWZjVGt6N3dQK05LRVMxblVMZGFraXNkClhKMGtJWDIyTk5qbnRsWnEyd09uaFVseFl0eXhTMWRYUjBUMVVjWlQxN3RFQjJQQkl1VnZNNXlkeVpwTmtBbDEKaDF4U3NESlB6b0NSVTdWdGtNaFNwbFBWUzhCeTNBS0x1ZUgvcml6ZitJRDFkd2pLSXg1aXlabG44Q3BieGFvTgpDMkdMQzA2WWEyZ3BScDFYSWlidUJwZDExS3ZaVEZhUERpbEZqc040ZHI1dXpOdWZBdTVIV0h2NnZLa3o2K3l1CmJ5c0tUeisxQWdNQkFBRUNnZ0VBWDI4dkg2M1gzNUNIdmxSMkF5eEdZT3BTODY1MUNRbSt3WjVGbUVLbW04K3UKaU5DQ2pPb3J3MVV1RlBYV3dOdUpzTFdXbVYvOHp2MWhKU0UrZTFMVG1RTlgvclMxM0QyQWJDMzJ2YjhFNmVUTwpYRmthUTB6Q2oxVzFDZlowY21UUnhrVXd6dVBCd3RvMzMxNDlxcTExSFNEZ0xUb2RoUlZ5aTRyREVIQnpEYVJiCkxlZ1dpcUIvR25yeVZ0V28wYUVnaFAwdGl2ZEEzSnNEWElUOUtYbHliRjk3ellLZGErUFRtSzliRmhoYVp5WlkKOFE2RmxIdlVzelFidldOalNSeXg2Uzh4S3IxdHRqYU1xUCthUzVVOFE1ektuMU02MEpDNzl3R3R0RTMycVhmVQozM3NHVENxYjVCRlpKM2liNHVmQ09CK2dUWnd6ZUE0RnVVZms2STdDd1FLQmdRRGptcDV4NkQwOGRkaittTkc4CmhsNVlqQ0Zzb0lrZCtoWU0rdUlQOXNYM1FHMGoyblpXSDJNR0lvaHVuZXV1M2tQQVRQcmI2UW5KejdBV2dKSXAKL1RkWGdDc1ZaODgwYTJqanZBQ3RBYVBja3dPcGRSTktYYXMrZWZrRXAwVU9PakdYWWZrdDZqem5ka1JrWXNCQQpGWEdySjFYbkF3TUw5KytMODJMSEdnejg3UUtCZ1FEWENnYnQydlZSUENaYnZzSG5GeUdmMnRkU0Yxbm5aTzJaClViOVgrK1NBMlM2dSs1V0hJZmljeTFGM2JpaE5EcTVEV0dicnBYblN2VlBOWDZHbEY1TlBoSUNhcmRVTkF0QUoKTWlrbXl6d29FSUpSY2Qralk4eXJrdU5Makloc3A1VldOaTBGOFdkYzl6OUJDOTBBdlR2RXp2U3lRWnZHZk9ERgpodmN1bk51ODZRS0JnUURZRkxQMk9tRGdwSlZsYUpvK1hHYjNzOW9Mc2dGYlYxRlY4MTFwZ0lRRHI4T3Q5VHJCCm1yeTlWMDJsandIeEc0ekE1WlNIOFI5YzNITTFlY3pLVmw4VEVGaFcweDVSaXVPaXlacnVwUTczV3c5djh2bGsKY2JjZzhsV3F5RTcwS2VWbzdoZk9Nb0t0MEljdnN0MElPaE9YUlJuMTN0TW1xclZlYmF2S2tIM2lKUUtCZ1FDcQpGKzFaTVd3QVlNSzZxVTM1Tyt2RjVUV1NZcFFqbTByeGpwNzZ1bTJKbWNENmVsaFJkb2FQaDZlZC80MXpQbHlMCk9wN1dZS0xYRmhqMmgyRjJGQXJheUNWdHRIaWtmUWdQYmhUczhhOVl4WTQvWEFLWTNEVWx0ZCtDZjl2ZGprVnEKMXhtUDdONWt3OUhONHROaVpVeWtwVXNhd1JpMXpVdUNFdnJzYlBqSEdRS0JnRjJhOTlNQ0RFTGlGU3VLK3NPOQptTytQUGxkRFlTeGdKemx2alc2dk5uWVpkeEhhSUM5NXRFZmxOQjc1dlBUbVR0dnRWeGlrazc3K3pWVjZ5L1hUCjd0emxSSks2S3M5MHZwN2IwVU92c0JIbFlDWHNXZkJyQTVrZVNyNjFkNGg0ZHZOQm1Ma2pIWW1pVWVrSFNKQTYKSC9NQVVxajNicWNhZ1pQVFM5Q0x1QkZsCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0=
+---
+# Source: mender/templates/device-auth-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: rsa-device-auth
+  namespace: default
+  labels:
+    app.kubernetes.io/name: rsa-device-auth
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: device-auth
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+data:
+  private.pem: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlHNHdJQkFBS0NBWUVBdlB1Q2xxbXpTVXR1VkxRK3QvTk5jU2ZPb0h4Wk9pTXkxVmI1WTl4U3dOaUhSY1ZvCjNEUXRiTzBwWCthR2hHWkE1enJzTGV6U2NoN2Q4NkVuQkVYVForS1NGdlRFV3hUSTM1Tkl4czFyQkV5dDcwMEIKR3dZWXE0SkpHeW95YVY1WEtmcUw5OTkza2NhbThhamdtNWltcHdUOUoyWU1LZndnbzN4VGNXdVpabUVKRWF3ZQpZcGcxdnl2bFErWDYxNUFjb1JOSjFDUUo1SHBYNzd3Z1dkc09hRk9CK1R1TlVnZFM2bVZFUEhVNjF0OU9YSFVjCnc5S2oydnd5S0w3eXc0MEV5cHhTTWVsT2NicWRnWFhqU0dGTzc0M2tvUnl4REdGS0oyUlk1cTBnblhjN0xQTzIKQzZ0dUN5ZzhCQ3pVVFhtV1JxZUQ5eGdpM05Sa0Nkb01GLzdUS1VBSG5vVEg0cUtqWTBUZ0tEdFdIb3BNNFZUMApRZUllOFRoSml6QWduaEJmb3hCZm40eHM4UktleURpT1JNT0RGR09XdkZQTmIxSTJEUHNoY3RwTyswVkVweUREClBzS24xTE9ySitTaGw2WklwT3k4d05JSVJPS3BLSTJ1Y2ZJdjI0NWlnc0hjck9NN1cwTStIa2JCd2hveldSNWgKakxhbGpKclJrTzYzK2xXVEFnTUJBQUVDZ2dHQkFLVC80M0N3RWYwNGdzZ3A1MmlzWVQwZXlHV09yRWo2V25PeQpVR1JFQld5aW9Oam1GenZMd3EyTUU4ZkxlajgzR0F2TGdsSkdweWRFay8wWEF2M1VDVlIybVo2NWJvY25pb3JLCkNZeXA1WG9IaVFXYWNoQ3FMZmZ3OU90bTJFVHZQYU5GUWRmVm9Jd0NxZGZzM3M1N1pXWUdFUkhKSTIyMDJMcGsKM21YMDBDWjNLbmZuazAvNkhWTWdmRGZnSURiOWVFR2FtYWRESC9BQWNhNjZ6blFsc2xxY0xxcnd0OTZhem1ZZwpySWNzdzRhL3lhY29DVWxnSy9nU29haTVyelBWZG9xK1hleUh3eG91dkxOaHJrWG9Bd1M0TnRBVG1TenJjVDFMCjh0Z2NQZ2U5TjE1cGM0dDlBclRlTjVSUExXeWhWN2E4MkdhVkZDTTJmbm9GTUcvWmRmMmFheE53ekYzUDRaRzUKUGxjSHB3UE9MYU1wTUFWZWJMaHk2ZWpqNDYvVUhBUmdBNXFFUUZJd1F5SnNwdVlsK2NRQzcrOXFwVEJkcGNqeAplSmxLc3diWVZrK3NSV1hVQ09YOHo4ODFScU5ZWVZ1RmVBMEQ1eU9XUkdLcitINGw0ck85ckNXRkJvbzZzdDdLCnMzNktQQkZhSzc0VTZRQUxsNTdvcHVjR1hldGZ3UUtCd1FEM2QwT09qa2xKaGZRMVlsTDVvNG5LVWM2QUo3dVcKWmRxZnZpUWxOUHB0YjNtaGNUWFI3U1NFcEZORSt5N0t5OUw0WVpnSEZKaXdtaXZ6RGJnZUNtQnlPYVZiTEp2TApERG5Ja2hnRGZXdVpaa3VBNTcvZHIwaTkwVDVkQjhJbVU2c24xV1NER0k4L3pvNnFaRG5jVWpESG41N1pJM204CmhMcEwyWFg5NnZUTklya2tFQ3ZNbnprYlk4azlKamhwZWJKMHBObXBvSUx0R2NGZTNsTWorWmIrV1RYeEU2SmgKb3c5RFY4blYzblZDOWVMYkQxNkZqK2twK0E1QWhnZjhhd3NDZ2NFQXczL3Q1TVp6VlVKYlRERG56Vnl1Vjhhbgo4VmZZZkRVSVgveWJSOThGMVA5ZDY2UitoWEN5N0cyT0paVGpuQ0hWYzZld3dqR2drN21sMTRtdzJlVWFaelVwCkdHNUdReGRhMVVKRk4yRmlyTmlmSS9Hak5YckFNYVo5NUwycjR1cU9DZmVzdStNbHhCYjFvdlVnZXNnd013dkkKMkw1eitCVXFIckcrQlRKTWx5SDNsYnlNUlBzVlJYdUZ2RU53dGpSd2x3SVlYNUIrVCtlQjV4R0FUYjdscW05LwpSUFN6aGhHYU15c0hKZ0QrQ3dxaEJjY2NSbElycXhoRzNpeVNOSlNaQW9IQUJXRjVmWk1JY3VuUHVvMXR3bkhVCjRDcFJOQ1lwQlFjbjdzdENtL0IvOVhzMENOZWVWUGMwRVJKRm9UMVk4aDNtYzNJanpSdWNpbEovM0NRVE9jdjkKOXQzY0E1Ui91cldFV0NFZEZvNVdsWnBNei91NkIwYjFiUE1zeVBjUE9LZ2ZFNW1uT3RhQTN1Rk41dFNSRVlKVAovek13VUFaZWNrUHNqUk9vWmlJQ3VxY2pvVzRjbGJGc20zVGEvbEpqYlord3lxcCs5UnBCWG9odDFQTSttWXltCnhOY0p2amt3RWJGcTlvcmxINXBic0Y0S1Zic0swaHFqOWo2bmlLMmhaTktyQW9IQWRkMnpON0xONWlGVG1lUUMKWFRYN2hzQW1rTU05cWVUdlg2K1Vqd2hQSTlPeWRGZUFVRU5hSEdFUXltZXhzbmhUa0o4UldvTkJKTTlReFZvbQpYYmhhNnM2S01FaUw0L2M0dEVwNElLTitNbWVIeXN2c2NsbkhkaWZDengzcmU2dWVaelFEMkdOaWFZN09HYWxnCkk2WitLTWg2RnZMOFNCMjZmemI2TVhmWjVXUjlPTEdzZ0FwQkVOc2dEaGs2NHg5S29rQ0pJVlNrVXRobzRUOFQKODh1Yis5MnRCWTNpam5vZVZhc2piQzQ4KzdzMHlaNzUxUXZGZUNueTBCQmZOWVJCQW9IQWYyYjZ2TUszVzMrdAp1cFhrUTRYL0xISXE5SElSbHR5VEJTVXBhVldGSXl1VzZtU2t2QzltZFRlUlc2a2ltaHFYRjN3Q21vZWpralU2CmVKOFZaZzVmbFd2Tkgrc2h1RDdjcTJMK1VMTzBmTXhnQ0I0QkMzUUV5WmQwaDZlcXdRRCtFU0tQL1ROMEtvYWIKT1p6Vkg1MnAxUTFJeXh0NWtBUG5UWVlVSEFhSUZ5MGFyMVV1cmhEQXIycC9LTTFuaHJnODAzV1dxblVmdzVPcQpERGt1NmpBU2NSa3F5Yms4SFZXNmo2QjR4cHV5L1JQTEh3MU9jelNJWXZDY1Naa3diOWRzCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0t
+---
+# Source: mender/templates/secret-mongodb-common.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name:  mongodb-common
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mongodb-common
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: secrets
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+type: Opaque
+data:
+  MONGO: bW9uZ29kYjovL21vbmdvZGI=
+  MONGO_URL: bW9uZ29kYjovL21vbmdvZGI=
+---
+# Source: mender/templates/secret-s3-artifacts.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: s3-artifacts
+  namespace: default
+  labels:
+    app.kubernetes.io/name: s3-artifacts
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: secrets
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+data:
+  AWS_URI: aHR0cDovL21pbmlvOjkwMDA=
+  AWS_BUCKET: bWVuZGVyLWFydGlmYWN0cw==
+  AWS_AUTH_KEY: bXlhY2Nlc3NrZXk=
+  AWS_AUTH_SECRET: bXlzZWNyZXRrZXk=
+---
+# Source: mender/templates/secret-smtp.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: smtp
+  namespace: default
+  labels:
+    app.kubernetes.io/name: smtp
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: secrets
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+data:
+  EMAIL_SENDER: cm9vdEBsb2NhbGhvc3Q=
+  SMTP_ADDRESS: c210cC5tYWlsdHJhcC5pbw==
+  SMTP_LOGIN: bnVsbA==
+  SMTP_PASSWORD: bnVsbA==
+  SMTP_SSL: ZmFsc2U=
+---
+# Source: mender/templates/useradm-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: rsa-useradm
+  namespace: default
+  labels:
+    app.kubernetes.io/name: rsa-useradm
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: useradm
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+data:
+  private.pem: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlHNUFJQkFBS0NBWUVBdjlnZVIya0gvYVBVV3pJZVFLcnBZeHRHNW5ZSVpLUWpTcWFKT1JKUjVkV202R1hCClI4QllJSGM5ZHZxWXBwUjFCQWNNamdVdkw0ZmlHT3N6SnJEdXV4MHFnL29ENVlkQTN5NmVPODBkWHBudE1VczYKVVJtNXhibExFNW5GU0RRT0FKVGhORDJiTEFxNnZwbDExUXdqeklrbE9oYm40T3BTUWtOaFA3NGFTeUN2Z1VFQgpmKzNjNUdFTmhFVlpGMDRMY0laUk5JQVBMNzBlR21qYWIyaWdWRXRSS0VmR3EvOHZGQUlxQ2lGcFo3MWlqS1VmClF5RFZmT2lud2lGdFF3dUZTVlEyS0xxNitnaXFxdTE5eSsyUHJ6VlBMYTdMamRYSWg1bHVIVURLYkZvRURkRUcKK2g3ZmVXdHhWV3Z4bzVocE5DNlF2dHNldHI2K2hxSVhpeVJ0Y3VUeDNTeHZnbUl3L29xU3pNNGc1SjFKR0c0cwpBSWt6elYrSlZCUE15bTBVSk1wNHlLTDJRZHRUYmVvK1ZHazluVDg1aU9MWlFlTlBpajZ6MlJVMDRYOFVkaGgwCjNnc3NROGY5RkpJbmpxMm13VUZHdzdURFRGSHovOVhmZkEzZU5VeXJBT2dLOStQbTJlbXcvWVlZNUVHd0V3T0gKUFRranJUTmhCcGFKL1lNZkFnTUJBQUVDZ2dHQUFiY2kvaXg0UDlKWk1iK08rYkVOaVM5VFFQaEpOdTBveTZBVgpsZ2NONkdveXBkMVREeHN2TG9zaVo0L3lFWHMrV0p6ZmhkMlNBSERNbXNCdm9xYnVXNG4xT1Z6ZzhBcDNrQWRRCnJ1UTBvUVhyVXdlREsvcDQ2TVd4WUNsOTFCbHpEcHBHTVR0anljOEd3SEdLMWk3WG14cVcxS0FqenFVSnUwSHkKK3FqdWYwRjVrRVJPaVNCTlcxVnEwNFh6Ti93Z3FnN3BadmpHS2YwYzZjdUtPSGpOQmpQdU05Z0FkTVZCWElKdwpjY3Erc0lqRytzNzNLcGgra0RGY1hxWUIzaG1hUVlYcXdEY0kwOVkwQTdqRjRCZHhuaEVxd2JrTlhKVi9zcnVTCnhNQmE4ajJtMVQ3Rkh1NmtMWmdGTzhKbktLeWxTa3QwWkhJeVlqMkdlSjN3b3NNTjJ3TFArcWJ6dFVHeUZTWHYKMmhNNlBOMm44c29ZaEpZVWlNNWI1Uk1WZ0IzdFpLblo2NlRvN3VGdGxPdXVCZVFxRXRqK1BsaWRpcHJjc0dpZwpDaGZ0Mitwbk1XT3B0Vng0SitpSTNKWUgvOGZXWngyNGpTTExvaFpmS2hCK09NMmRiYlhOUWRXUDVkMnlPM0VqCndsT0JFZnNudjBaT04zYXJiNXduMEx2ME1jcFJBb0hCQU8rcGh3TSswLzRpOUYzRy93amdta0ltK1pCVFJDazUKTk1Wdy9NdmlUUHJRZzJPWXdscjBrNFpCdk5sa2dpTHIrVU8xcWdUdzJkQ1g4K2Y3SnQ5YjdSUFBJemhJQTVIYwpEU1FmZ2F5cVlqTWxUNTRrOTVTNVcvL2xzRmZJK2FsNWEwcUUwWDRnT2FTTFkvS2JoU2dCYkhscnh3dkZhWkIyClJhdmJqaFlPNG5Cbk00aVRnM24wVGw5dDJhMktsa0FrSUYrZEx4dVB1MzZwUlJSNEJBYVBoVHU5UEwvTG1tWkQKL0Vtb3VBV1lxeHIrdVcxZVo1dGlrNkZCWGpRTWIyV2ZKUUtCd1FETTdCZnZhRG1iVm55ckt3b3Q4U0J6cy9zNwpsWmduRTBla3hRNXlGRnNicHIxdSt2S2ZST1dmTXZSY3UrVDc5QmtIdk1CVGJyWktxMGsvUEt3MjF4Vy94cjFuClV6b0wzcXlvbTQ3dm5RNHBOdmFwY3BKOEpybTFmc2loM3hzZmRFOTVub1NRQzZpY1I5NjZpYmxjWU5ld0IyVE0KUDQ5ODA1SjgxSWtOVGZ6aWovZThONU4wbk1IRW1MV3lwelBtb3NoZUY1R2FjMVJPRi9qK3ZQZTV0d25DMmlYbApBemdHNFdjQ0hLQVZGUUtMSVFIUlR0ajJNNmhqZnU1V2ttOTB0L01DZ2NBSGhNSC9rQkVHZ0FJNmp1dWhVNnFECk9NWExpVkV5R2VGVjhGMTk1L09TU3NoVWI0NXBYQkxrdTFzNVZyWGVjcGkzVHhPdVkvL3hVMU1MakEyRUpGWWoKc1BQaDZDQjBpdnErajE1NkZENVFiSE02K3QzcGhJY21XQVpZT3EzYWF6eTZjY0JBdkxJU1AyMDdSelcrTTQwNwpvZTMwcUpUUE8yYWtKWmNuaWdBQWxydy9KS0dUU2Q3TGo1NnNteFJybnJhRlNXRVk5RUZsajluaThvRHQwOExTClJQV0s3dEJCTlJETkhzWG5Kd3IzSmRhYlg4TFFWUjljaDdoMDJZOEZHU0VDZ2NFQW5VZG5aM3hiR25wYTNSVC8Kanh0T2lQOU9pQURjOHNDOWNCMCtaUmh5aE5xSThqRHhIb1RHcUZWM2IrVldibnArNjQxWEg3SU5mMm5Qb2hWegpKL1FVNFVnci9xM0dFMjRvbnBBbU9Jb1dZRk9ySllxbUcxdXRsVHRseWJkdkhja3JabkRmMVo3ZEhuV2E0UmpyCmg1ZGNjK0o0M3JxNTZsaUlTZjdsNGF4RnQ2NC91ZG45OXJhSmtkYVRQamRPZ21uVjEwSEhvdjk1YVNiRkdONzQKVXpYRTdDUjZpVGJiUFl5cWZ0aHhsVHkyNHduR1YxdG84aTNidytHY0ZCMzRKV0U1QW9IQkFPNHVIVmZwNDlPdwpFdG1SNk1HN1ZteE5BajNrRlo5UktiYU5zdlo0aGdybkRmWDhnM3FEclJTdkFpakxvZk1JVjFtOWM2VloxeXcvCjl2VS9XOFFXOFBGUVYwaHBSMTh0UXpxdUZnQ0JxVmhZQ085bDdJNGJBMWdYTUcyZUxmb2NjVEh4RVJzeWhLMnkKSEF1TWVpRXhhT1dJUG5zK1paREdKOWUvNmcwT0JwN3VIM3pGdlpPdnNjVFNVVm1vK2o3L3RIcU5wZ0tPVWZvNQo1YUJxVXd2bUFKZU9vVjJxZ0lUUkowTWdzZ3lPQUg2WnQ3akxTcGZDNmFwckNpSDMyUFR2eFE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQ==
+---
+# Source: mender/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mender-configmap
+  namespace: default
+  labels:
+    app.kubernetes.io/name: mender-configmap
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: config
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+data:
+  version: 2.5.0
+---
+# Source: mender/templates/api-gateway-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-api-gateway
+  namespace: default
+  labels:
+    app.kubernetes.io/name: api-gateway-svc
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: api-gateway
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 443
+    protocol: TCP
+    targetPort: 443
+    name: https
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    name: http
+  selector:
+    app.kubernetes.io/name: api-gateway
+---
+# Source: mender/templates/deployments-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-deployments
+  namespace: default
+  labels:
+    app.kubernetes.io/name: deployments-svc
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: deployments
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: deployments
+---
+# Source: mender/templates/device-auth-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-device-auth
+  namespace: default
+  labels:
+    app.kubernetes.io/name: device-auth-svc
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: device-auth
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: device-auth
+---
+# Source: mender/templates/gui-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-gui
+  namespace: default
+  labels:
+    app.kubernetes.io/name: gui-svc
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: gui
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    name: http
+  selector:
+    app.kubernetes.io/name: gui
+---
+# Source: mender/templates/inventory-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-inventory
+  namespace: default
+  labels:
+    app.kubernetes.io/name: inventory-svc
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: inventory
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: inventory
+---
+# Source: mender/templates/tenantadm-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-tenantadm
+  namespace: default
+  labels:
+    app.kubernetes.io/name: tenantadm
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: tenantadm-svc
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: tenantadm
+---
+# Source: mender/templates/useradm-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-useradm
+  namespace: default
+  labels:
+    app.kubernetes.io/name: useradm-svc
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: useradm
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: useradm
+---
+# Source: mender/templates/workflows-server-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mender-workflows-server
+  namespace: default
+  labels:
+    app.kubernetes.io/name: workflows
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: workflows-svc
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: workflows-server
+---
+# Source: mender/templates/api-gateway-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  namespace: default
+  labels:
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: api-gateway
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: api-gateway
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: api-gateway
+    spec:
+
+      containers:
+      - name: api-gateway
+        image: docker.io/mendersoftware/api-gateway:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+
+        ports:
+        - containerPort: 443
+        - containerPort: 80
+
+        # Readiness/liveness probes
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 5
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 15
+
+        env:
+        - name: HAVE_MULTITENANT
+          value: "true"
+        - name: DNS_NAMES
+          value: "mender-tenantadm mender-useradm mender-inventory mender-deployments mender-device-auth mender-gui"
+        - name: IS_LOGS_FORMAT_JSON
+          value: "false"
+        - name: ALLOWED_HOSTS
+          value: "[a-zA-Z0-9:.]+"
+
+        volumeMounts:
+        - name: certs
+          mountPath: /var/www/mendersoftware/cert/
+          readOnly: true
+        - name: dhparam
+          mountPath: /usr/local/openresty/nginx/conf/dhparam.pem
+          subPath: dhparam.pem
+          readOnly: true
+
+      volumes:
+      - name: certs
+        secret:
+          secretName: api-gateway
+      - name: dhparam
+        secret:
+          secretName: api-gateway
+---
+# Source: mender/templates/create-artifact-worker-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: create-artifact-worker
+  namespace: default
+  labels:
+    app.kubernetes.io/name: create-artifact-worker
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: workflows
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: create-artifact-worker
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: create-artifact-worker
+    spec:
+
+      containers:
+      - name: workflows
+        image: docker.io/mendersoftware/create-artifact-worker:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+        command: ["workflows", "--config", "/etc/workflows/config.yaml", "worker", "--automigrate"]
+
+        # Supported configuration settings: https://github.com/mendersoftware/workflows/blob/master/config.yaml
+        # Set in order, last value for the key will be used in case duplications.
+        env:
+        - name: CREATE_ARTIFACT_GATEWAY_URL
+          value: https://mender-api-gateway
+        - name: CREATE_ARTIFACT_DEPLOYMENTS_URL
+          value: http://mender-deployments:8080
+        envFrom:
+        - prefix: WORKFLOWS_
+          secretRef:
+            name: mongodb-common
+---
+# Source: mender/templates/deployments-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployments
+  namespace: default
+  labels:
+    app.kubernetes.io/name: deployments
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: deployments
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: deployments
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: deployments
+    spec:
+
+      containers:
+      - name: deployments
+        image: docker.io/mendersoftware/deployments:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 200m
+            memory: 50M
+        args: ["server", "--automigrate"]
+
+        # Readiness/liveness probes
+        readinessProbe:
+          httpGet:
+            path: /api/internal/v1/deployments/health
+            port: 8080
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /api/internal/v1/deployments/alive
+            port: 8080
+          periodSeconds: 5
+
+        env:
+        - name: DEPLOYMENTS_MIDDLEWARE
+          value: "prod"
+        - name: DEPLOYMENTS_AWS_TAG_ARTIFACT
+          value: "true"
+
+        # Supported configuration settings: https://github.com/mendersoftware/deployments/blob/master/config.yaml
+        # Set in order, last value for the key will be used in case duplications.
+        envFrom:
+        - prefix: DEPLOYMENTS_
+          secretRef:
+            name: mongodb-common
+        - prefix: DEPLOYMENTS_
+          secretRef:
+            name: s3-artifacts
+---
+# Source: mender/templates/device-auth-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: device-auth
+  namespace: default
+  labels:
+    app.kubernetes.io/name: device-auth
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: device-auth
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: device-auth
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: device-auth
+    spec:
+
+      containers:
+      - name: device-auth
+        image: docker.io/mendersoftware/deviceauth:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+        args: ["server", "--automigrate"]
+
+        # Readiness/liveness probes
+        readinessProbe:
+          httpGet:
+            path: /api/internal/v1/devauth/health
+            port: 8080
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /api/internal/v1/devauth/alive
+            port: 8080
+          periodSeconds: 5
+
+        volumeMounts:
+        - name: rsa
+          mountPath: "/etc/deviceauth/rsa/"
+          readOnly: true
+
+        env:
+        - name: DEVICEAUTH_INVENTORY_ADDR
+          value: "http://mender-inventory:8080/"
+        - name: DEVICEAUTH_ORCHESTRATOR_ADDR
+          value: "http://mender-workflows-server:8080/"
+        - name: DEVICEAUTH_JWT_ISSUER
+          value: "Mender"
+        - name: DEVICEAUTH_JWT_EXP_TIMEOUT
+          value: "604800"
+        - name: DEVICEAUTH_MIDDLEWARE
+          value: "prod"
+        - name: DEVICEAUTH_MAX_DEVICES_LIMIT_DEFAULT
+          value: "500"
+
+        # Supported configuration settings: https://github.com/mendersoftware/deviceauth/blob/master/config.yaml
+        # Set in order, last value for the key will be used in case duplications.
+        envFrom:
+        - prefix: DEVICEAUTH_
+          secretRef:
+            name: mongodb-common
+
+      volumes:
+      - name: rsa
+        secret:
+          secretName: rsa-device-auth
+---
+# Source: mender/templates/gui-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gui
+  namespace: default
+  labels:
+    app.kubernetes.io/name: gui
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: gui
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gui
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # We are executign js minify at container startup. This is expensive and time consuming.
+  # Give container minimum time to finish before it's considered ready.
+  minReadySeconds: 120
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gui
+    spec:
+
+      containers:
+      - name: gui
+        image: docker.io/mendersoftware/gui:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+
+        # Readiness/liveness probes
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 5
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 15
+
+        env:
+        - name: HAVE_MULTITENANT
+          value: "true"
+        - name: GATEWAY_IP
+          value: "k8s.hosted.mender.io"
+        - name: GATEWAY_PORT
+          value: "443"
+---
+# Source: mender/templates/inventory-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory
+  namespace: default
+  labels:
+    app.kubernetes.io/name: inventory
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: inventory
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: inventory
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: inventory
+    spec:
+
+      containers:
+      - name: inventory
+        image: docker.io/mendersoftware/inventory:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+        args: ["server", "--automigrate"]
+
+        # Readiness/liveness probes
+        readinessProbe:
+          httpGet:
+            path: /api/internal/v1/inventory/health
+            port: 8080
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /api/internal/v1/inventory/alive
+            port: 8080
+          periodSeconds: 5
+
+        env:
+        - name: INVENTORY_MIDDLEWARE
+          value: "prod"
+
+        # Supported configuration settings: https://github.com/mendersoftware/inventory-enterprise/blob/master/config.yaml
+        # Set in order, last value for the key will be used in case duplications.
+        envFrom:
+        - prefix: INVENTORY_
+          secretRef:
+            name: mongodb-common
+---
+# Source: mender/templates/useradm-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: useradm
+  namespace: default
+  labels:
+    app.kubernetes.io/name: useradm
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: useradm
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: useradm
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+
+  progressDeadlineSeconds: 600
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: useradm
+    spec:
+
+      containers:
+      - name: useradm
+        image: docker.io/mendersoftware/useradm:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+        args: ["server", "--automigrate"]
+
+        env:
+        - name: USERADM_MIDDLEWARE
+          value: "prod"
+        - name: USERADM_JWT_ISSUER
+          value: "Mender Users"
+        - name: USERADM_JWT_EXP_TIMEOUT
+          value: "604800"
+        - name: USERADM_SERVER_PRIV_KEY_PATH
+          value: "/etc/useradm/rsa/private.pem"
+        - name: USERADM_MIDDLEWARE
+          value: "prod"
+        - name: USERADM_TOTP_ISSUER
+          value: "Mender"
+
+        # Readiness/liveness probes
+        readinessProbe:
+          httpGet:
+            path: /api/internal/v1/useradm/health
+            port: 8080
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /api/internal/v1/useradm/alive
+            port: 8080
+          periodSeconds: 5
+
+        volumeMounts:
+        - name: rsa
+          mountPath: "/etc/useradm/rsa/"
+          readOnly: true
+
+
+        # Supported configuration settings: https://github.com/mendersoftware/useradm/blob/master/config.yaml
+        # Set in order, last value for the key will be used in case duplications.
+
+        envFrom:
+        - secretRef:
+            name: mongodb-common
+          prefix: USERADM_
+
+      volumes:
+      - name: rsa
+        secret:
+          secretName: rsa-useradm
+---
+# Source: mender/templates/workflows-server-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workflows-server
+  namespace: default
+  labels:
+    app.kubernetes.io/name: workflows-server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: workflows
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: workflows-server
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: workflows-server
+    spec:
+
+      containers:
+      - name: workflows
+        image: docker.io/mendersoftware/workflows:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+        args: ["server", "--automigrate"]
+
+        # Readiness/liveness probes
+        readinessProbe:
+          httpGet:
+            path: /api/v1/health
+            port: 8080
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /status
+            port: 8080
+          periodSeconds: 5
+
+        # Supported configuration settings: https://github.com/mendersoftware/workflows/blob/master/config.yaml
+        # Set in order, last value for the key will be used in case duplications.
+        envFrom:
+        - prefix: WORKFLOWS_
+          secretRef:
+            name: mongodb-common
+---
+# Source: mender/templates/workflows-worker-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workflows-worker
+  namespace: default
+  labels:
+    app.kubernetes.io/name: workflows-worker
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/instance: mender
+    app.kubernetes.io/component: workflows
+    app.kubernetes.io/part-of: mender
+    helm.sh/chart: "mender"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: workflows-worker
+
+  # if deployment is not completed within 10 min, consider it failed,
+  # as result deployment Reason=ProgressDeadlineExceeded
+  # needs to be big enough to rollout to complete
+  progressDeadlineSeconds: 600
+
+  # Rollout upgrade one by one
+  # In this case we warranty there are always instances online.
+  # In case any issues, they will be detected early and deployment be stopped.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: workflows-worker
+    spec:
+
+      containers:
+      - name: workflows
+        image: docker.io/mendersoftware/workflows-worker:mender-2.5.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128M
+          requests:
+            cpu: 100m
+            memory: 50M
+        args: ["worker", "--excluded-workflows", "generate_artifact", "--automigrate"]
+
+        # Supported configuration settings: https://github.com/mendersoftware/workflows-enterprise/blob/master/config.yaml
+        # Set in order, last value for the key will be used in case duplications.
+        envFrom:
+        - prefix: WORKFLOWS_
+          secretRef:
+            name: mongodb-common
