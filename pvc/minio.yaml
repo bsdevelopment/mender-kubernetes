@@ -24,8 +24,8 @@ spec:
     requests:
       storage: 500Gi
   storageClassName: standard
-  volumeMode: Filesystem
-  volumeName: pvc-39c67df2-9fd3-4e61-a7ff-6b3ab4335a99
+#  volumeMode: Filesystem
+#  volumeName: pvc-39c67df2-9fd3-4e61-a7ff-6b3ab4335a99
 status:
   accessModes:
   - ReadWriteOnce

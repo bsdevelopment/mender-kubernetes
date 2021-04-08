@@ -15,8 +15,6 @@ metadata:
     helm.sh/chart: mongodb-10.12.1
   name: mongodb
   namespace: default
-  resourceVersion: "494"
-  uid: 6ae4f21e-db8c-410a-be63-ef1002240978
 spec:
   accessModes:
   - ReadWriteOnce
@@ -24,11 +22,11 @@ spec:
     requests:
       storage: 8Gi
   storageClassName: standard
-  volumeMode: Filesystem
-  volumeName: pvc-6ae4f21e-db8c-410a-be63-ef1002240978
-status:
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 8Gi
-  phase: Bound
+#  volumeMode: Filesystem
+#  volumeName: pvc-6ae4f21e-db8c-410a-be63-ef1002240978
+#status:
+#  accessModes:
+#  - ReadWriteOnce
+#  capacity:
+#    storage: 8Gi
+#  phase: Bound

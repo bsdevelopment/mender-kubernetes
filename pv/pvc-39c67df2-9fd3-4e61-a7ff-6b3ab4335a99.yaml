@@ -4,52 +4,7 @@ metadata:
   annotations:
     hostPathProvisionerIdentity: 20d6790e-d3d9-4960-b8bc-185b25e37037
     pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
-  creationTimestamp: "2021-04-07T16:59:35Z"
-  finalizers:
-  - kubernetes.io/pv-protection
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:status:
-        f:phase: {}
-    manager: kube-controller-manager
-    operation: Update
-    time: "2021-04-07T16:59:35Z"
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          .: {}
-          f:hostPathProvisionerIdentity: {}
-          f:pv.kubernetes.io/provisioned-by: {}
-      f:spec:
-        f:accessModes: {}
-        f:capacity:
-          .: {}
-          f:storage: {}
-        f:claimRef:
-          .: {}
-          f:apiVersion: {}
-          f:kind: {}
-          f:name: {}
-          f:namespace: {}
-          f:resourceVersion: {}
-          f:uid: {}
-        f:hostPath:
-          .: {}
-          f:path: {}
-          f:type: {}
-        f:persistentVolumeReclaimPolicy: {}
-        f:storageClassName: {}
-        f:volumeMode: {}
-    manager: storage-provisioner
-    operation: Update
-    time: "2021-04-07T16:59:35Z"
   name: pvc-39c67df2-9fd3-4e61-a7ff-6b3ab4335a99
-  resourceVersion: "8622"
-  uid: 1c2f93d0-ade4-48a9-8cba-42ce34b20cc5
 spec:
   accessModes:
   - ReadWriteOnce
@@ -60,13 +15,9 @@ spec:
     kind: PersistentVolumeClaim
     name: minio
     namespace: default
-    resourceVersion: "8617"
-    uid: 39c67df2-9fd3-4e61-a7ff-6b3ab4335a99
   hostPath:
     path: /tmp/hostpath-provisioner/default/minio
     type: ""
   persistentVolumeReclaimPolicy: Delete
   storageClassName: standard
   volumeMode: Filesystem
-status:
-  phase: Bound
