@@ -2,21 +2,19 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   annotations:
-    meta.helm.sh/release-name: minio
-    meta.helm.sh/release-namespace: default
-    pv.kubernetes.io/bind-completed: "yes"
-    pv.kubernetes.io/bound-by-controller: "yes"
-    volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+#    meta.helm.sh/release-name: minio
+#    meta.helm.sh/release-namespace: default
+#    pv.kubernetes.io/bind-completed: "yes"
+#    pv.kubernetes.io/bound-by-controller: "yes"
+#    volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
   labels:
-    app: minio
-    app.kubernetes.io/managed-by: Helm
-    chart: minio-6.0.5
-    heritage: Helm
-    release: minio
+#    app: minio
+#    app.kubernetes.io/managed-by: Helm
+#    chart: minio-6.0.5
+#    heritage: Helm
+#    release: minio
   name: minio
   namespace: default
-  resourceVersion: "8624"
-  uid: 39c67df2-9fd3-4e61-a7ff-6b3ab4335a99
 spec:
   accessModes:
   - ReadWriteOnce
@@ -26,9 +24,9 @@ spec:
   storageClassName: standard
 #  volumeMode: Filesystem
 #  volumeName: pvc-39c67df2-9fd3-4e61-a7ff-6b3ab4335a99
-status:
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 500Gi
-  phase: Bound
+#status:
+#  accessModes:
+#  - ReadWriteOnce
+#  capacity:
+#    storage: 500Gi
+#  phase: Bound

@@ -10,11 +10,11 @@ spec:
   - ReadWriteOnce
   capacity:
     storage: 500Gi
-  claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: minio
-    namespace: default
+#  claimRef:
+#    apiVersion: v1
+#    kind: PersistentVolumeClaim
+#    name: minio
+#    namespace: default
   hostPath:
     path: /tmp/hostpath-provisioner/default/minio
     type: ""

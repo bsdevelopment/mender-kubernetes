@@ -10,11 +10,11 @@ spec:
   - ReadWriteOnce
   capacity:
     storage: 8Gi
-  claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: mongodb
-    namespace: default
+ # claimRef:
+ #   apiVersion: v1
+ #   kind: PersistentVolumeClaim
+ #   name: mongodb
+ #   namespace: default
   hostPath:
     path: /tmp/hostpath-provisioner/default/mongodb
     type: ""
